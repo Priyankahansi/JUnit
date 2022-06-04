@@ -18,6 +18,12 @@ public class UserRegistrationTest {
         boolean result = userRegistration.validateFirstName("Hanasi");
         Assert.assertTrue(result);
     }
+    @Test
+    public void givenEmail_WhenProper_ShouldReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateFirstName("abc.xyz@bl.co.in");
+        Assert.assertTrue(result);
+    }
 }
 
 
