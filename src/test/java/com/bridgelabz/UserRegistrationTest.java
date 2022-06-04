@@ -16,14 +16,14 @@ public class UserRegistrationTest {
     @Test
     public void givenLastName_WhenProper_ShouldReturnTrue() {
         UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.validateFirstName("Hanasi");
+        boolean result = userRegistration.validateLastName("Hanasi");
         Assert.assertTrue(result);
     }
 
     @Test
     public void givenEmail_WhenProper_ShouldReturnTrue() {
         UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.validateFirstName("abc.xyz@bl.co.in");
+        boolean result = userRegistration.validateEmail("abc.xyz@bl.co.in");
         Assert.assertTrue(result);
     }
 
@@ -33,8 +33,20 @@ public class UserRegistrationTest {
         boolean result = userRegistration.validateMobileNumber("91 7894561231");
         Assert.assertTrue(result);
     }
-}
 
+    @Test
+    public void givenRule1_Minimumcharacter_ShouldReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateRule1("praju@123");
+        Assert.assertTrue(result);
+    }
+    @Test
+    public void givenRule2_Minimumcharacter_ShouldReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateRule2("praju@123");
+        Assert.assertTrue(result);
+    }
+}
 
 
 
